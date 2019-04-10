@@ -1,4 +1,4 @@
-package com.programacion3.progra3ejemplos;
+package com.programacion3.progra3ejemplos.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.programacion3.progra3ejemplos.R;
 
 public class RecibirParametrosActivity extends AppCompatActivity {
 

@@ -1,6 +1,5 @@
-package com.programacion3.progra3ejemplos;
+package com.programacion3.progra3ejemplos.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
+
+import com.programacion3.progra3ejemplos.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Obtener la referencia de un objeto del Layout
         checkBoxRememberMe = findViewById(R.id.checkboxRememberMe);
 
         Log.d("LIFE_CYCLE", "ON CREATE");
@@ -59,8 +61,10 @@ public class LoginActivity extends AppCompatActivity {
         Log.d("LIFE_CYCLE", "ON DESTROY");
     }
 
+    // Metodo que puede ser llamado desde onClick en algun elemento del layout, en este caso un botón
     public void doLogin(View view){
         Toast.makeText(this, "Acabas de hacer login!!", Toast.LENGTH_LONG).show();
+        // Creamos un intent para ir a otro activity
         Intent intent = new Intent(this, EjemploPatitoActivity.class);
         startActivity(intent);
     }

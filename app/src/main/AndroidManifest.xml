@@ -9,24 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProgramaticViewsActivity">
+        <activity android:name=".activities.ListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecibirParametrosActivity" />
-        <activity android:name=".PasoParametrosActivity"/>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".EjemploPatitoActivity" />
-        <activity android:name=".TableLayoutActivity" />
-        <activity android:name=".AbsoluteLayoutActivity" />
-        <activity android:name=".MarginPaddingActivity" />
-        <activity android:name=".RelativeLayoutActivity" />
-        <activity android:name=".LinearLayoutActivity" />
-        <activity android:name=".FrameLayoutActivity" />
-        <activity android:name=".GridLayoutActivity" />
+        <activity android:name=".activities.ProgramaticViewsActivity"/>
+        <activity android:name=".activities.RecibirParametrosActivity" />
+        <activity android:name=".activities.PasoParametrosActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.EjemploPatitoActivity" />
+        <activity android:name=".activities.TableLayoutActivity" />
+        <activity android:name=".activities.AbsoluteLayoutActivity" />
+        <activity android:name=".activities.MarginPaddingActivity" />
+        <activity android:name=".activities.RelativeLayoutActivity" />
+        <activity android:name=".activities.LinearLayoutActivity" />
+        <activity android:name=".activities.FrameLayoutActivity" />
+        <activity android:name=".activities.GridLayoutActivity" />
     </application>
 
 </manifest>

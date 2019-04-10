@@ -1,4 +1,4 @@
-package com.programacion3.progra3ejemplos;
+package com.programacion3.progra3ejemplos.activities;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
+import com.programacion3.progra3ejemplos.R;
 
 public class PasoParametrosActivity extends AppCompatActivity {
 

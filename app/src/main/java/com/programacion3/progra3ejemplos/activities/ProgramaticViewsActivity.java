@@ -1,4 +1,4 @@
-package com.programacion3.progra3ejemplos;
+package com.programacion3.progra3ejemplos.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+
+import com.programacion3.progra3ejemplos.R;
 
 public class ProgramaticViewsActivity extends AppCompatActivity {
 
@@ -20,18 +22,19 @@ public class ProgramaticViewsActivity extends AppCompatActivity {
 
         // Creamos Boton 1
         Button button = new Button(this);
-        button.setText("Bienvenidos");
+        button.setText("Boton 1");
         parent.addView(button); // Agregamos al elemento padre
 
         // Creamos Boton 2
         final Button button2 = new Button(this);
-        button2.setText("Bienvenidos 2");
+        button2.setText("Agregar CheckBox");
+
         // Podemos agregar un listener (interfaz) a nuestro boton y ejecutar algo cuando se haga click
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CheckBox checkBox = new CheckBox(ProgramaticViewsActivity.this);
-                checkBox.setText("Recuerdameee");
+                checkBox.setText("New Checkbox");
                 parent.addView(checkBox);
             }
         });
