@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.programacion3.progra3ejemplos.R;
+import com.programacion3.progra3ejemplos.model.EstudianteUPB;
 
 public class RecibirParametrosActivity extends AppCompatActivity {
 

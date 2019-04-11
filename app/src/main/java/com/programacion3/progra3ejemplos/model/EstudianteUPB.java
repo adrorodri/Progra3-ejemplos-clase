@@ -1,4 +1,4 @@
-package com.programacion3.progra3ejemplos.activities;
+package com.programacion3.progra3ejemplos.model;
 
 import java.io.Serializable;
 
@@ -8,13 +8,13 @@ public class EstudianteUPB implements Serializable {
     private int codigo;
     private int foto;
 
-    EstudianteUPB(String nombre, String apellido, int codigo) {
+    public EstudianteUPB(String nombre, String apellido, int codigo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.codigo = codigo;
     }
 
-    EstudianteUPB(String nombre, String apellido, int codigo, int foto) {
+    public EstudianteUPB(String nombre, String apellido, int codigo, int foto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.codigo = codigo;

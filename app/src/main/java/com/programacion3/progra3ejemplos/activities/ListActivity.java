@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 import com.programacion3.progra3ejemplos.R;
 import com.programacion3.progra3ejemplos.adapters.EstudiantesAdapter;
+import com.programacion3.progra3ejemplos.model.EstudianteUPB;
 
 import java.util.LinkedList;
 import java.util.List;

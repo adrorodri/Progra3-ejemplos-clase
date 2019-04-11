@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.programacion3.progra3ejemplos.R;
+import com.programacion3.progra3ejemplos.model.EstudianteUPB;
 
 public class PasoParametrosActivity extends AppCompatActivity {
 
