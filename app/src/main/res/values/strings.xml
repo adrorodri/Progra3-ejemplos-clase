@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Progra 3 Ejemplos</string>
+    <string name="toggle_on">ON</string>
+    <string name="toggle_off">OFF</string>
 </resources>

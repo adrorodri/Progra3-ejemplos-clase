@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Progra 3 Ejempli</string>
+    <string name="toggle_off">APAGADO</string>
+    <string name="toggle_on">ENCHENDIDO</string>
 </resources>
