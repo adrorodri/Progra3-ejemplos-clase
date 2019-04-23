@@ -6,15 +6,10 @@
     <TextView
         android:id="@+id/textViewMenuItem"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
         android:textColor="@color/colorBlack"
-        android:gravity="center_vertical"
         android:textSize="20sp" />
 
-    <!--Linea divisora-->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="bottom"
-        android:background="@color/colorDivider" />
 </FrameLayout>

@@ -1,11 +1,10 @@
 package com.programacion3.progra3ejemplos.activities;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.programacion3.progra3ejemplos.R;
 import com.programacion3.progra3ejemplos.adapters.RecyclerMenuAdapter;
@@ -60,6 +59,6 @@ public class RecyclerMenuActivity extends AppCompatActivity {
         // Seteamos el adaptador al RecyclerView
         recyclerView.setAdapter(recyclerMenuAdapter);
         // Seteamos un Layout Manager (Lineal en este caso) para el RecyclerView
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
     }
 }
