@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
 import com.programacion3.progra3ejemplos.R;
 import com.programacion3.progra3ejemplos.model.EstudianteUPB;
 
@@ -16,6 +17,8 @@ public class PasoParametrosActivity extends AppCompatActivity {
     EditText editTextParametro1;
     EditText editTextParametro2;
     CheckBox checkBoxParametro3;
+
+    Gson gson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class PasoParametrosActivity extends AppCompatActivity {
 
         // Tambien podemos pasar objetos, siempre y cuando su clase implemente a Serializable
         EstudianteUPB estudianteUPB = new EstudianteUPB("Juan", "Perez", 12345);
-        intent.putExtra("estudiante", estudianteUPB);
+        intent.putExtra("estudiante", this.gson.toJson(estudianteUPB));
 
         // Iniciamos un nuevo activity y esperamos un resultado de este (con el codigo de referencia 123)
         startActivityForResult(intent, 123);

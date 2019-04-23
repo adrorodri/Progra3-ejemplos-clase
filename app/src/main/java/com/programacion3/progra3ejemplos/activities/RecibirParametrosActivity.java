@@ -7,12 +7,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.programacion3.progra3ejemplos.R;
 import com.programacion3.progra3ejemplos.model.EstudianteUPB;
 
 public class RecibirParametrosActivity extends AppCompatActivity {
 
     EditText editText;
+
+    Gson gson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +29,12 @@ public class RecibirParametrosActivity extends AppCompatActivity {
         boolean parametro3 = intent.getBooleanExtra("parametro3", false);
 
         // Podemos obtener el objeto estudiante que es serializable
-        EstudianteUPB estudianteUPB = (EstudianteUPB) intent.getSerializableExtra("estudiante");
+        EstudianteUPB estudianteUPB = this.gson.fromJson(intent.getStringExtra("estudiante"), EstudianteUPB.class);
 
         // Actualizamos el UI
         TextView textView = findViewById(R.id.textViewParametros);
-        textView.setText(parametro1 + "\n" + parametro2 + "\n" + String.valueOf(parametro3));
+//        textView.setText(parametro1 + "\n" + parametro2 + "\n" + String.valueOf(parametro3));
+        textView.setText(intent.getStringExtra("estudiante"));
 
         editText = findViewById(R.id.editTextEditarParametro1);
         editText.setText(parametro1);

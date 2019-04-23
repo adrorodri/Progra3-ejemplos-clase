@@ -2,4 +2,6 @@
     <string name="app_name">Progra 3 Ejempli</string>
     <string name="toggle_off">APAGADO</string>
     <string name="toggle_on">ENCHENDIDO</string>
+    <string name="compartir">Compartire</string>
+    <string name="camara">Camera</string>
 </resources>
