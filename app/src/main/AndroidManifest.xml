@@ -11,28 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.IntentImplicitoActivity">
-            <!--Intent filter que determina que este activity puede recibir información de tipo texto desde otras apps-->
-            <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.WidgetsActivity" />
-        <activity android:name=".activities.ListExampleActivity" />
-        <activity android:name=".activities.RecyclerMenuActivity" />
-        <activity android:name=".activities.ListActivity" />
-        <activity android:name=".activities.ProgramaticViewsActivity" />
-        <activity android:name=".activities.RecibirParametrosActivity" />
-        <activity android:name=".activities.PasoParametrosActivity"/>
-        <activity android:name=".activities.LoginActivity">
+        <activity android:name=".activities.RecyclerMenuActivity">
             <!--Intent filter que determina el activity por defecto de nuestra app-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.IntentImplicitoActivity">
+            <!--Intent filter que determina que este activity puede recibir información de tipo texto desde otras apps-->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.WidgetsActivity" />
+        <activity android:name=".activities.ListExampleActivity" />
+        <activity android:name=".activities.ListActivity" />
+        <activity android:name=".activities.ProgramaticViewsActivity" />
+        <activity android:name=".activities.RecibirParametrosActivity" />
+        <activity android:name=".activities.PasoParametrosActivity" />
+        <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.EjemploPatitoActivity" />
         <activity android:name=".activities.TableLayoutActivity" />
         <activity android:name=".activities.AbsoluteLayoutActivity" />

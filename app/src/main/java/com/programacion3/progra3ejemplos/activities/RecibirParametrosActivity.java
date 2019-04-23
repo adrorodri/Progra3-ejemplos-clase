@@ -1,8 +1,8 @@
 package com.programacion3.progra3ejemplos.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,18 +28,24 @@ public class RecibirParametrosActivity extends AppCompatActivity {
         String parametro2 = intent.getStringExtra("parametro2");
         boolean parametro3 = intent.getBooleanExtra("parametro3", false);
 
-        // Podemos obtener el objeto estudiante que es serializable
+        // Podemos obtener el objeto estudiante que lo pasamos a traves del formato JSON usando la libreria GSON
         EstudianteUPB estudianteUPB = this.gson.fromJson(intent.getStringExtra("estudiante"), EstudianteUPB.class);
 
         // Actualizamos el UI
         TextView textView = findViewById(R.id.textViewParametros);
-//        textView.setText(parametro1 + "\n" + parametro2 + "\n" + String.valueOf(parametro3));
+
+        // Mostramos cualquiera de nuestros string extras: parametro1, parametro2, parametro3 o estudiante
         textView.setText(intent.getStringExtra("estudiante"));
 
         editText = findViewById(R.id.editTextEditarParametro1);
         editText.setText(parametro1);
 
-        Toast.makeText(this, estudianteUPB.getNombre(), Toast.LENGTH_LONG).show();
+        // Mostramos el nombre de nuestro estudiante obtenido mediante GSON
+        if (estudianteUPB != null) {
+            Toast.makeText(this, estudianteUPB.getNombre(), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "El parametro estudiante no se mando como extra", Toast.LENGTH_LONG).show();
+        }
     }
 
     // Podemos sobreescribir la funcionalidad del botón de back

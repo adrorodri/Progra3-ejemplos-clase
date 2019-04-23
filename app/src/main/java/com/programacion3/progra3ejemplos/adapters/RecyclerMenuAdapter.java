@@ -1,11 +1,11 @@
 package com.programacion3.progra3ejemplos.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.programacion3.progra3ejemplos.R;
 import com.programacion3.progra3ejemplos.adapters.viewholders.MenuViewHolder;
@@ -53,6 +53,8 @@ public class RecyclerMenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
                 onMenuItemClickListener.onMenuItemClick(menuItemList.get(position));
             }
         });
+        // Background Color del item
+        holder.itemView.setBackgroundColor(Color.parseColor(menuItemList.get(position).getColor()));
     }
 
     // Cantidad Total de items

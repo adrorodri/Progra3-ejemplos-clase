@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/textViewMenuItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"/>
+        android:layout_height="60dp"
+        android:textColor="@color/colorBlack"
+        android:gravity="center_vertical"
+        android:textSize="20sp" />
+
+    <!--Linea divisora-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorDivider" />
 </FrameLayout>
