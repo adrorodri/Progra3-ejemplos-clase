@@ -43,6 +43,7 @@ public class RecyclerMenuActivity extends AppCompatActivity {
         menuItems.add(new MenuItem("Ejemplo Listas 1", ListActivity.class, "#ffbdbd"));
         menuItems.add(new MenuItem("Ejemplo Listas 2", ListExampleActivity.class, "#c9c9ff"));
         menuItems.add(new MenuItem("Intent Implicito", IntentImplicitoActivity.class, "#f1cbff"));
+        menuItems.add(new MenuItem("Notificaciones", NotificationActivity.class, "#e1f7d5"));
 
         // Creamos un Adapter para el menu
         RecyclerMenuAdapter recyclerMenuAdapter = new RecyclerMenuAdapter(this, menuItems);

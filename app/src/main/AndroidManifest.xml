@@ -11,18 +11,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activities.NotificationActivity"></activity>
         <activity android:name=".activities.RecyclerMenuActivity">
-            <!--Intent filter que determina el activity por defecto de nuestra app-->
+
+            <!-- Intent filter que determina el activity por defecto de nuestra app -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".activities.IntentImplicitoActivity">
-            <!--Intent filter que determina que este activity puede recibir información de tipo texto desde otras apps-->
+
+            <!-- Intent filter que determina que este activity puede recibir información de tipo texto desde otras apps -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>

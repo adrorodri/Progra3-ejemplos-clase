@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/elem1" android:title="Elemento 1"/>
+    <item android:id="@+id/elem2" android:title="Elemento 2"/>
+    <item android:id="@+id/elem3" android:title="Elemento 3"/>
+    <item android:id="@+id/elem4" android:title="Elemento 4"/>
+</menu>
