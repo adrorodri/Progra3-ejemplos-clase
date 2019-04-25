@@ -1,7 +1,14 @@
 package com.programacion3.progra3ejemplos.activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -125,5 +132,46 @@ public class NotificationActivity extends AppCompatActivity {
     // Muesta un snackbar de la misma forma que un Toast
     public void mostrarSnackbar(View view) {
         Snackbar.make(view, "Esto es un snackbar", Snackbar.LENGTH_LONG).show();
+    }
+
+    // Muestra una notificación en el teléfono
+    public void mostrarNotificacion(View view) {
+        // Es requerido crear un notification channel para nuestra app en Android 8 o superior
+        createNotificationChannel();
+
+        // Creamos un builder y seteamos los parametros que queremos mostrar en nuestra notificacion
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default");
+        builder.setContentTitle("Se estrena Avengers!");
+        builder.setContentText("Compra tus entradas ya!!");
+
+        // Seleccionamos el icono para mostrar en la notificacion
+        builder.setSmallIcon(R.drawable.notification_icon);
+
+        Bitmap largeIcon = BitmapFactory.decodeResource(this.getResources(),
+                R.drawable.thanos);
+
+        // Podemos mostrar un icono grande en la app
+        builder.setLargeIcon(largeIcon);
+        builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        // A traves de un notification manager, mostramos nuestra notificacion
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(123456789, builder.build());
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Default";
+            String description = "Descripcion del canal Defaul";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("default", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }
