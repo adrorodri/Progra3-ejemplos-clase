@@ -23,23 +23,33 @@ public class SharedPrefsActivity extends AppCompatActivity {
 
         sharedPrefsSwitch = findViewById(R.id.switchSharedPrefs);
 
+        // Creamos nuestro objeto de Shared Preferences al inicio del Activity
         sharedPreferences = getSharedPreferences("DatosPrueba", MODE_PRIVATE);
     }
 
     public void escribir(View view) {
+        // Obtenemos el valor actual de nuestro Switch
         boolean value = sharedPrefsSwitch.isChecked();
+
+        // Abrimos nuestro Editor de Shared Preferences
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        // Escribimos los valores que necesitemos almacenar
         editor.putBoolean("switchValue", value);
+        // Aplicamos y confirmamos los cambios.
         editor.apply();
         editor.commit();
     }
 
     public void leer(View view) {
+
+        // Obtenemos el ultimo valor guardado del Switch de nuestro Shared Preferences
         boolean lastSwitchValue = sharedPreferences.getBoolean("switchValue", false);
+        // Nuestra funcion para mostrar un Toast
         mostrarToast(String.valueOf(lastSwitchValue));
     }
 
     public void mostrarToast(String message) {
+        // Mostraremos un custom toast con un textView dentro (Texto Grande)
         LayoutInflater inflater = LayoutInflater.from(this);
         View view = inflater.inflate(R.layout.layout_big_toast, null);
 
