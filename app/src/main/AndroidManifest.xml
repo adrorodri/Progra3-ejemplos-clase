@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.programacion3.progra3ejemplos">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.NotificationActivity"></activity>
+        <activity android:name=".activities.SharedPrefsActivity"></activity>
+        <activity android:name=".activities.MapActivity" />
+        <activity android:name=".activities.NotificationActivity" />
         <activity android:name=".activities.RecyclerMenuActivity">
 
             <!-- Intent filter que determina el activity por defecto de nuestra app -->
@@ -47,6 +53,13 @@
         <activity android:name=".activities.LinearLayoutActivity" />
         <activity android:name=".activities.FrameLayoutActivity" />
         <activity android:name=".activities.GridLayoutActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBKTYYA15FhuOAW7qLZHv4XSEMbJkFEGG8" />
     </application>
 
 </manifest>

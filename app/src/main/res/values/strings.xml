@@ -4,4 +4,6 @@
     <string name="toggle_off">OFF</string>
     <string name="compartir">Compartir</string>
     <string name="camara">Camera</string>
+    <string name="shared_prefs_escribir">ESCRIBIR</string>
+    <string name="shared_prefs_leer">LEER</string>
 </resources>
