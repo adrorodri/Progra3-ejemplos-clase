@@ -5,6 +5,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -15,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.SharedPrefsActivity"></activity>
+        <activity android:name=".activities.FilesActivity"></activity>
+        <activity android:name=".activities.SharedPrefsActivity" />
         <activity android:name=".activities.MapActivity" />
         <activity android:name=".activities.NotificationActivity" />
         <activity android:name=".activities.RecyclerMenuActivity">

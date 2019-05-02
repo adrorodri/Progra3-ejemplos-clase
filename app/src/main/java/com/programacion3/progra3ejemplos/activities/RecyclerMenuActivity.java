@@ -46,6 +46,7 @@ public class RecyclerMenuActivity extends AppCompatActivity {
         menuItems.add(new MenuItem("Notificaciones", NotificationActivity.class, "#e1f7d5"));
         menuItems.add(new MenuItem("Mapas", MapActivity.class, "#c9c9ff"));
         menuItems.add(new MenuItem("Shared Preferences", SharedPrefsActivity.class, "#e1f7d5"));
+        menuItems.add(new MenuItem("Files", FilesActivity.class, "#e1f7d5"));
 
         // Creamos un Adapter para el menu
         RecyclerMenuAdapter recyclerMenuAdapter = new RecyclerMenuAdapter(this, menuItems);
