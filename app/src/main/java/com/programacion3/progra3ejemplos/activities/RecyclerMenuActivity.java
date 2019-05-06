@@ -1,7 +1,9 @@
 package com.programacion3.progra3ejemplos.activities;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -13,6 +15,9 @@ import com.programacion3.progra3ejemplos.model.OnMenuItemClickListener;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import pub.devrel.easypermissions.EasyPermissions;
+import pub.devrel.easypermissions.PermissionRequest;
 
 public class RecyclerMenuActivity extends AppCompatActivity {
 
@@ -45,8 +50,9 @@ public class RecyclerMenuActivity extends AppCompatActivity {
         menuItems.add(new MenuItem("Intent Implicito", IntentImplicitoActivity.class, "#f1cbff"));
         menuItems.add(new MenuItem("Notificaciones", NotificationActivity.class, "#e1f7d5"));
         menuItems.add(new MenuItem("Mapas", MapActivity.class, "#c9c9ff"));
-        menuItems.add(new MenuItem("Shared Preferences", SharedPrefsActivity.class, "#e1f7d5"));
+        menuItems.add(new MenuItem("Shared Preferences", SharedPrefsActivity.class, "#f1cbff"));
         menuItems.add(new MenuItem("Files", FilesActivity.class, "#e1f7d5"));
+        menuItems.add(new MenuItem("DataBase", DbActivity.class, "#c9c9ff"));
 
         // Creamos un Adapter para el menu
         RecyclerMenuAdapter recyclerMenuAdapter = new RecyclerMenuAdapter(this, menuItems);
@@ -64,5 +70,22 @@ public class RecyclerMenuActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerMenuAdapter);
         // Seteamos un Layout Manager (Lineal en este caso) para el RecyclerView
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
+
+        // Request Permissions
+        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+        EasyPermissions.requestPermissions(
+                new PermissionRequest.Builder(this, 123, perms)
+                        .setPositiveButtonText("ACEPTAR")
+                        .setNegativeButtonText("CANCELAR")
+                        .build());
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 }
